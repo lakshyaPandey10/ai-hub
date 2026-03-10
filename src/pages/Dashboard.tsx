@@ -6,7 +6,6 @@ import { AppSidebar } from "@/components/AppSidebar";
 import AIChat from "@/components/AIChat";
 import NewsPage from "@/pages/NewsPage";
 import WeatherPage from "@/pages/WeatherPage";
-import SourceCode from "@/pages/SourceCode";
 import ProfilePage from "@/pages/ProfilePage";
 import ImageGenerator from "@/pages/ImageGenerator";
 import TranslatorPage from "@/pages/TranslatorPage";
@@ -146,7 +145,6 @@ const Dashboard = () => {
                 <Route index element={<AIChat />} />
                 <Route path="news" element={<NewsPage />} />
                 <Route path="weather" element={<WeatherPage />} />
-                <Route path="source-code" element={<SourceCode />} />
                 <Route path="image-gen" element={<ImageGenerator />} />
                 <Route path="translator" element={<TranslatorPage />} />
                 <Route path="notes" element={<NotesPage />} />
