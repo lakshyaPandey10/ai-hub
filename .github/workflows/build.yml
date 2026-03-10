@@ -33,13 +33,17 @@ jobs:
           VITE_GROQ_API_KEY: ${{ secrets.VITE_GROQ_API_KEY }}
 
       - name: 📱 Install Capacitor
-        run: npm install @capacitor/core @capacitor/cli @capacitor/android
+        run: npm install @capacitor/core@latest @capacitor/cli@latest @capacitor/android@latest
 
       - name: ➕ Add Android Platform
         run: |
           npx cap add android || true
           npx cap copy android
           npx cap sync android
+
+      - name: 🔧 Fix Kotlin Duplicate
+        run: |
+          echo "configurations.all { resolutionStrategy { force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22' } }" >> android/app/build.gradle
 
       - name: 🤖 Setup Android SDK
         uses: android-actions/setup-android@v3
